@@ -41,7 +41,7 @@ if not all(col in schedule_df.columns for col in required_schedule_cols):
     exit()
 
 # Select features for logistic regression (exclude non-numeric and outcome columns)
-feature_cols = [col for col in master_df.columns if col not in ['Team', 'Games Played', 'W', 'L'] and master_df[col].dtype in [np.float64, np.int64]]
+feature_cols = [col for col in master_df.columns if col not in ['Team', 'Games Played', 'W', 'L', 'MP_PerGame', 'MP_Total'] and master_df[col].dtype in [np.float64, np.int64]]
 print("Features used for prediction:", feature_cols)
 
 # Simulate training data by creating hypothetical matchups
